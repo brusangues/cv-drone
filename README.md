@@ -11,6 +11,7 @@ O projeto utiliza a biblioteca OpenCV e classificadores Haar Cascades e Yolov3 p
 
 Instale o [Anaconda](https://docs.anaconda.com/anaconda/install/).   
 Baixe e extraia o repositório do projeto.   
+Dentro da pasta "yolo-custom" utilize o [arquivo url](yolo-custom/download_yolov3.weights.url) para fazer o download dos pesos da rede na mesma pasta.   
 Com o Anaconda Prompt aberto, navegue até a pasta do repositório.   
 Exemplo: 
 > cd E:\Documents\GitHub\yolo-classifier
@@ -31,10 +32,10 @@ Os argumentos principais dos comandos a seguir são:
 Haar Cascades para detecção de rostos e drones com webcam. 
 > python cascades_webcam.py
 
-Yolov3 em imagens. Exemplo:
+Yolov3 em imagem. Exemplo:
 > python YOLO_final.py -i data/100.JPEG -o output -y yolo-custom
 	
-Yolov3 em vídeos:
+Yolov3 em vídeo. Exemplo:
 > python YOLO_final.py -i data/hubsan.mp4 -o output -y yolo-custom
 
 Yolov3 com webcam:
