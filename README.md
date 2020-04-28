@@ -9,9 +9,10 @@ O projeto utiliza a biblioteca OpenCV e classificadores Haar Cascades e Yolov3 p
 
 *A instalação foi feita em Windows10. Não garanto o funcionamento correto em outros sistemas.
 
-Instale o [Anaconda](https://docs.anaconda.com/anaconda/install/). 
-Baixe e extraia o repositório do projeto. 
-Com o Anaconda Prompt aberto, navegue até a pasta do repositório. 
+Instale o [Anaconda](https://docs.anaconda.com/anaconda/install/).   
+Baixe e extraia o repositório do projeto.   
+Dentro da pasta "yolo-custom" utilize o [arquivo url](yolo-custom/download_yolov3.weights.url) para fazer o download dos pesos da rede na mesma pasta.   
+Com o Anaconda Prompt aberto, navegue até a pasta do repositório.   
 Exemplo: 
 > cd E:\Documents\GitHub\yolo-classifier
 
@@ -24,17 +25,17 @@ Para a criação e ativação do ambiente "cvdrone":
 Para rodar os arquivos python, abra o Anaconda Prompt na pasta do repositório e ative o ambiente "cvdrone". 
 
 Os argumentos principais dos comandos a seguir são: 
- * -i caminho para o arquivo de entrada
- * -o pasta para o arquivo de saída (será salvo com o mesmo nome do arquivo original)
- * -y pasta contendo os arquivos do Yolov3
+ * -i <arquivo> : caminho para o arquivo de entrada
+ * -o <pasta> : pasta para o arquivo de saída (será salvo com o mesmo nome do arquivo original)
+ * -y <pasta> :pasta contendo os arquivos do Yolov3
 
 Haar Cascades para detecção de rostos e drones com webcam. 
 > python cascades_webcam.py
 
-Yolov3 em imagens. Exemplo:
+Yolov3 em imagem. Exemplo:
 > python YOLO_final.py -i data/100.JPEG -o output -y yolo-custom
 	
-Yolov3 em vídeos:
+Yolov3 em vídeo. Exemplo:
 > python YOLO_final.py -i data/hubsan.mp4 -o output -y yolo-custom
 
 Yolov3 com webcam:
@@ -42,18 +43,18 @@ Yolov3 com webcam:
 
 ### Desenvolvimento
 
-Drones ou quadricópteros foram a escolha do objeto de detecção pois eu possuo um drone e eu posso testar a eficácia da detecção com meus próprios vídeos, além de poder utilizar o sistema para projetos futuros. 
+Drones ou quadricópteros foram a escolha do objeto de detecção pois eu possuo um drone e posso testar a eficácia da detecção com meus próprios vídeos, além de poder utilizar o sistema para projetos futuros. 
 
-Primeiramente foi criado um classificador utilizando Haar Cascades. Para o treinamento, utilizou-se algumas imagens de drones sem direitos autorais, e milhares de imagens de paisagens retiradas do [ImageNet](https://image-net.org/).
-
-A classificação usando Haar Cascades é bastante simples de ser implementada.
+Primeiramente foi criado um classificador utilizando Haar Cascades. Para o treinamento, foram utilizadas algumas imagens de drones sem direitos autorais, e milhares de imagens de paisagens retiradas do [ImageNet](https://image-net.org/). A classificação usando Haar Cascades é bastante simples de ser implementada.
 
 Depois, uma rede do Yolov3 foi treinada utilizando esta [base de dados](http://dx.doi.org/10.17632/zcsj2g2m4c.4) contendo 2864 imagens de drones e suas respectivas posições rotuladas. Depois de 10,000 iterações, os resultados foram avaliados tanto no conjunto de treino quanto em um conjunto de 24 imagens de teste pertencentes à base de dados, mas que foram rotuladas manualmente. 
 
 Para decidir qual conjunto de pesos utilizar, foram gerados os seguintes gráficos:
-![Teste](Results_Test.png)
 
-![Treino](Results_Training.png)
+<p float="left">
+  <img src="Results_Test.png" width="400" />
+  <img src="Results_Training.png" width="400" /> 
+</p>
 
 A classificação utilizando o Yolov3 foi feita com base em um [projeto anterior próprio](https://github.com/brusangues/UFABC-Digital-Image-Processing-2019.3-Project-Car-Plate-Segmentation-and-OCR).
 
