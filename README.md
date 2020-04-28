@@ -16,7 +16,8 @@ Exemplo:
 > cd E:\Documents\GitHub\yolo-classifier
 
 Para a criação e ativação do ambiente "cvdrone":
-> conda env create --file environment.yml
+> conda env create --file environment.yml 
+
 > conda activate cvdrone
 
 ### Utilização
