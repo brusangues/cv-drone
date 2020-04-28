@@ -1,0 +1,6 @@
+# .gitignore
+
+yolov3_training_10000.weights
+
+# track these files, if they exist
+!.gitignore
