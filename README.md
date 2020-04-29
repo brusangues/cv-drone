@@ -1,6 +1,8 @@
 # Detecção de drones em imagens, vídeos ou diretamente da webcam
 Drone detection using Haar Cascades, Yolov3 in images, videos and webcam. 
 
+![Drone Detection Gif](output/bulletcam02.gif)
+
 Projeto desenvolvido para exercitar técnicas de visão computacional, utilizando classificadores treinados em bases de dados não convencionais.  
 
 O projeto utiliza a biblioteca OpenCV e classificadores Haar Cascades e Yolov3 personalizados para a detecção de drones em imagens, vídeos ou diretamente da webcam. 
